@@ -206,6 +206,22 @@ st.markdown("""
 # =============================================================================
 @st.cache_resource
 def load_model():
+
+    # 🔍 DEBUG: Shows exactly what's happening
+    st.write("📁 ALL FILES IN REPO ROOT:", os.listdir('.'))
+    st.write("💾 model_90k.joblib exists?", os.path.exists('model_90k.joblib'))
+    st.write("💾 medical_similarity_model.joblib exists?", os.path.exists('medical_similarity_model.joblib'))
+    
+    try:
+        # Try multiple model files in order
+        model_files = ["medical_similarity_model.joblib", "model_90k.joblib"]
+        for mf in model_files:
+            try:
+                model = joblib.load(mf)
+                break
+            except:
+                continue
+        # ... rest of your code stays the same
     try:
         # Try multiple model files in order
         model_files = ["medical_similarity_model.joblib", "model_90k.joblib"]
