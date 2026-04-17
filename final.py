@@ -87,7 +87,7 @@ st.markdown("""
 }
 
 .score-big {
-    font-size: 3rem;
+    font-size: 2.7rem;
     font-weight: 900;
     margin-bottom: 0.5rem;
     line-height: 1;
@@ -354,7 +354,7 @@ def result_ui(medcpt, bertscore, pubmed_score, medmatch, contra, final, rel_pct,
     status_color = "#dcfce7" if final >= 0.8 else "#fef3c7" if final >= 0.65 else "#fecaca"
     st.markdown(f"""
     <div class="result-hero" style="background: linear-gradient(135deg, {color}, {color});">
-        <div style="font-size: 6rem; font-weight: 900; margin-bottom: 1.5rem; 
+        <div style="font-size: 4.5rem; font-weight: 900; margin-bottom: 1.5rem; 
                    color: {status_color}; text-shadow: 0 4px 12px rgba(0,0,0,0.3);">
             {final:.1%}
         </div>
@@ -417,12 +417,12 @@ def model_performance_section():
 # 🔥 MAIN APP LAYOUT WITH EXACT FIRST APP FUNCTIONALITY
 st.markdown("""
 <div class="hero-section">
-    <h1 style="font-size: 4.5rem; font-weight: 900; margin: 0 0 1rem 0; 
+    <h1 style="font-size: 3.5rem; font-weight: 900; margin: 0 0 1rem 0; 
                background: linear-gradient(135deg, #667eea, #764ba2, #f093fb); 
                -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
         🩺 Medical Note AI Grader
     </h1>
-    <p style="font-size: 1.5rem; color: #475569; font-weight: 600; margin: 0;">
+    <p style="font-size: 1.1rem; color: #475569; font-weight: 600; margin: 0;">
          Trained Model | Manual + CSV Upload | Production Ready
     </p>
 </div>
