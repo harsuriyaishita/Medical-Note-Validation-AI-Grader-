@@ -222,16 +222,7 @@ def load_model():
             except:
                 continue
         # ... rest of your code stays the same
-    try:
-        # Try multiple model files in order
-        model_files = ["medical_similarity_model.joblib", "model_90k.joblib"]
-        for mf in model_files:
-            try:
-                model = joblib.load(mf)
-                break
-            except:
-                continue
-        
+
         # Try preprocessing files
         prep_files = ["preprocessing.joblib"]
         preprocessing = {}
