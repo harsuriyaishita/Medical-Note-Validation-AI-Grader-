@@ -206,37 +206,40 @@ st.markdown("""
 # =============================================================================
 @st.cache_resource
 def load_model():
-    try:
-        # Try multiple model files in order
-        model_files = ["medical_similarity_model.joblib", "model_90k.joblib"]
-        for mf in model_files:
-            try:
-                model = joblib.load(mf)
-                break
-            except:
-                continue
-        
-        # Try preprocessing files
-        prep_files = ["preprocessing.joblib"]
-        preprocessing = {}
-        for pf in prep_files:
-            try:
-                preprocessing.update(joblib.load(pf))
-                break
-            except:
-                pass
-        
-        # Default values if preprocessing missing
-        MEDICAL_TERMS = preprocessing.get("MEDICAL_TERMS", ["fever","diabetes","bp","blood","pressure","heart","infection","pain","cancer","tumor","covid","symptoms","treatment","diagnosis","patient","dose","admission","discharge","impression","assessment","plan"])
-        NEGATIONS = preprocessing.get("NEGATIONS", ["no","not","never","none","without","negative","dont","doesnt"])
-        
-        st.success(f"✅ Model loaded: {model}")
-        return model, MEDICAL_TERMS, NEGATIONS
-    except:
-        st.error("❌ No model found. Place model_90k.joblib or medical_similarity_model.joblib in folder.")
+    model_files = [
+        "medical_similarity_model.joblib",
+        "model_90k.joblib"
+    ]
+
+    model = None
+
+    for mf in model_files:
+        try:
+            model = joblib.load(mf)
+            st.success(f"✅ Loaded model: {mf}")
+            break
+        except Exception as e:
+            st.warning(f"❌ Failed loading {mf}: {e}")
+
+    if model is None:
+        st.error("🚨 Model not found OR xgboost missing. Add to requirements.txt")
         st.stop()
 
+    MEDICAL_TERMS = [
+        "fever","diabetes","bp","blood","pressure","heart","infection",
+        "pain","cancer","tumor","covid","symptoms","treatment",
+        "diagnosis","patient","dose","admission","discharge",
+        "impression","assessment","plan"
+    ]
+
+    NEGATIONS = ["no","not","never","none","without","negative"]
+
+    return model, MEDICAL_TERMS, NEGATIONS
+
+
 model, MEDICAL_TERMS, NEGATIONS = load_model()
+
+# ==================
 
 # =============================================================================
 # EXACT SAME SCORING FUNCTIONS FROM FIRST APP
