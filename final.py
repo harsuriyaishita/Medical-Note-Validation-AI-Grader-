@@ -36,7 +36,7 @@ st.markdown("""
     background: rgba(255,255,255,0.95);
     backdrop-filter: blur(25px);
     border-radius: 28px;
-    padding: 2.5rem;
+    padding: 1.0rem;
     margin: 1.5rem 0;
     box-shadow: 0 25px 60px rgba(0,0,0,0.15);
     border: 1px solid rgba(255,255,255,0.3);
@@ -46,10 +46,10 @@ st.markdown("""
 .hero-section {
     background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%);
     border-radius: 32px;
-    padding: 3.5rem 2.5rem;
+    padding: 1.8rem 1.3rem;
     text-align: center;
     box-shadow: 0 35px 70px rgba(0,0,0,0.2);
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.2rem;
     border: 2px solid rgba(255,255,255,0.4);
 }
 
@@ -57,7 +57,7 @@ st.markdown("""
 .metric-card {
     background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.9) 100%);
     border-radius: 24px;
-    padding: 2rem 1.5rem;
+    padding: 1.6rem 1.2rem;
     text-align: center;
     border: 2px solid rgba(255,255,255,0.4);
     box-shadow: 0 20px 40px rgba(0,0,0,0.12);
@@ -517,7 +517,7 @@ else:  # CSV BATCH MODE - EXACT SAME LOGIC AS FIRST APP
 
 # ✨ SPECTACULAR FOOTER
 st.markdown("""
-<div style="text-align: center; padding: 3rem 2rem; 
+<div style="text-align: center; padding: 2rem 1rem; 
             background: linear-gradient(135deg, rgba(102,126,234,0.9) 0%, rgba(118,75,162,0.9) 100%);
             color: white; border-radius: 28px; margin-top: 3rem; box-shadow: 0 25px 60px rgba(102,126,234,0.4);">
     <div style="font-size: 1.8rem; font-weight: 800; margin-bottom: 0.5rem;">
