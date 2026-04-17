@@ -408,7 +408,7 @@ def model_performance_section():
             <div class="metric-card-perf" style="border-top: 5px solid {colors[i]};">
                 <div class="score-big" style="color: {colors[i]};">{value:.1%}</div>
                 <div class="score-label">{name.replace('_', ' ').title()}</div>
-                <div style="font-size: 0.85rem; color: #94a3b8;">90K Test Set</div>
+                <div style="font-size: 0.85rem; color: #94a3b8;"> Test Set Based </div>
             </div>
             """, unsafe_allow_html=True)
 
