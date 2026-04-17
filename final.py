@@ -214,7 +214,7 @@ def load_model():
     
     try:
         # Try multiple model files in order
-        model_files = ["medical_similarity_model.joblib", "model_90k.joblib"]
+        model_files = ['medical_similarity_model.joblib', 'model_90k.joblib']
         for mf in model_files:
             try:
                 model = joblib.load(mf)
